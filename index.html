@@ -9,24 +9,27 @@
   <meta name="author" content="The Lush Theory">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#1A1A1A">
-  <link rel="canonical" href="https://thelushtheory.salon/">
+  <link rel="canonical" href="https://thelustherapy.netlify.app/">
 
-  <!-- Open Graph -->
+  <!-- Open Graph / Social Cards -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="The Lush Theory">
-  <meta property="og:title" content="The Lush Theory | Unisex Salon – Skin, Laser, Aesthetics, Hair & Nails">
+  <meta property="og:title" content="The Lush Theory | Unisex Salon">
   <meta property="og:description" content="Premium unisex salon for skin care, laser hair reduction, aesthetics, hair and nails. Complete beauty and grooming for women and men.">
-  <meta property="og:image" content="https://thelushtheory.salon/logo-512.png">
-  <meta property="og:image:width" content="512">
-  <meta property="og:image:height" content="512">
-  <meta property="og:url" content="https://thelushtheory.salon/">
+  <meta property="og:image" content="https://thelustherapy.netlify.app/og-image.png">
+  <meta property="og:image:secure_url" content="https://thelustherapy.netlify.app/og-image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="The Lush Theory – Unisex Salon">
+  <meta property="og:url" content="https://thelustherapy.netlify.app/">
   <meta property="og:locale" content="en_IN">
 
   <!-- Twitter -->
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="The Lush Theory | Unisex Salon">
   <meta name="twitter:description" content="Skin • Laser • Aesthetics • Hair • Nails. Complete beauty and grooming for women and men.">
-  <meta name="twitter:image" content="https://thelushtheory.salon/logo-512.png">
+  <meta name="twitter:image" content="https://thelustherapy.netlify.app/og-image.png">
 
   <!-- Favicons -->
   <link rel="icon" href="favicon.ico" sizes="any">
@@ -306,7 +309,9 @@
     .hero {
       padding: var(--space-2xl) 1.5rem var(--space-xl);
       text-align: center;
-      background: linear-gradient(180deg, #EDE6E1 0%, var(--ivory) 70%);
+      background: linear-gradient(135deg, #EDE6E1 0%, #F7F4F0 40%, #E8D5D0 100%);
+      background-size: 200% 200%;
+      animation: softShift 18s ease-in-out infinite;
       overflow: hidden;
     }
 
@@ -324,7 +329,7 @@
       box-shadow: 0 12px 40px rgba(0,0,0,0.12);
       opacity: 0;
       transform: scale(0.94);
-      animation: heroIn 0.9s var(--ease) 0.1s forwards;
+      animation: heroIn 0.9s var(--ease) 0.1s forwards, logoBreath 5.5s ease-in-out 1.2s infinite;
     }
 
     .hero-label {
@@ -396,6 +401,20 @@
         opacity: 1;
         transform: none;
       }
+    }
+
+    @keyframes logoBreath {
+      0%, 100% {
+        box-shadow: 0 12px 40px rgba(0,0,0,0.12), 0 0 0 0 rgba(201, 168, 108, 0);
+      }
+      50% {
+        box-shadow: 0 12px 40px rgba(0,0,0,0.12), 0 0 28px 4px rgba(201, 168, 108, 0.22);
+      }
+    }
+
+    @keyframes softShift {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
     }
 
     section {
@@ -792,6 +811,11 @@
         transform: none;
         animation: none;
       }
+
+      .hero {
+        animation: none;
+        background: linear-gradient(180deg, #EDE6E1 0%, var(--ivory) 70%);
+      }
     }
   </style>
 </head>
@@ -1144,9 +1168,9 @@
     "name": "The Lush Theory",
     "alternateName": "The Lush Theory Unisex Salon",
     "description": "Premium unisex salon offering skin care, laser hair reduction, advanced aesthetics, hair treatments and nails for women and men.",
-    "url": "https://thelushtheory.salon/",
+    "url": "https://thelustherapy.netlify.app/",
     "telephone": "+917042520220",
-    "image": "https://thelushtheory.salon/logo-512.png",
+    "image": "https://thelustherapy.netlify.app/logo-512.png",
     "priceRange": "$$",
     "sameAs": [
       "https://www.instagram.com/thelushtheory.salon"

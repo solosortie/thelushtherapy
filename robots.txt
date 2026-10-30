@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://thelushtheory.salon/sitemap.xml
+Sitemap: https://thelustherapy.netlify.app/sitemap.xml
