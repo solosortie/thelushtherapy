@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Lush Theory | Unisex Salon in India – Skin, Laser, Aesthetics, Hair & Nails</title>
+  <title>The Lush Theory | Unisex Salon – Skin, Laser, Aesthetics, Hair & Nails</title>
   <meta name="description" content="The Lush Theory is a premium unisex salon offering skin care, laser hair reduction, advanced aesthetics, hair treatments and nails for women and men. Look beautiful. Feel confident.">
   <meta name="keywords" content="The Lush Theory, unisex salon, laser hair reduction, HydraFacial, hair spa, bridal makeup, skin treatments, aesthetics salon, men's grooming">
   <meta name="author" content="The Lush Theory">
@@ -85,6 +85,7 @@
       background-color: var(--ivory);
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+      padding-bottom: 72px;
     }
 
     h1, h2, h3, h4 {
@@ -94,26 +95,16 @@
       color: var(--charcoal);
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    ul {
-      list-style: none;
-    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; height: auto; display: block; }
+    ul { list-style: none; }
 
     :focus-visible {
       outline: 2px solid var(--gold);
       outline-offset: 3px;
     }
 
+    /* Header */
     .site-header {
       position: sticky;
       top: 0;
@@ -140,10 +131,7 @@
       gap: 0.75rem;
       transition: opacity 0.2s ease;
     }
-
-    .logo-link:hover {
-      opacity: 0.85;
-    }
+    .logo-link:hover { opacity: 0.85; }
 
     .logo-img {
       width: 42px;
@@ -184,10 +172,7 @@
       background: var(--gold);
       transition: width 0.3s var(--ease);
     }
-
-    .nav a:hover::after {
-      width: 100%;
-    }
+    .nav a:hover::after { width: 100%; }
 
     .header-actions {
       display: flex;
@@ -214,21 +199,10 @@
       cursor: pointer;
       white-space: nowrap;
     }
-
     .btn:hover {
       background: transparent;
       color: var(--charcoal);
       transform: translateY(-1px);
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--charcoal);
-    }
-
-    .btn-outline:hover {
-      background: var(--charcoal);
-      color: var(--ivory);
     }
 
     .btn-instagram {
@@ -236,13 +210,11 @@
       border-color: #E1306C;
       color: #E1306C;
     }
-
     .btn-instagram:hover {
       background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
       border-color: transparent;
       color: #fff;
     }
-
     .btn-instagram svg {
       width: 16px;
       height: 16px;
@@ -261,7 +233,6 @@
       width: 36px;
       height: 36px;
     }
-
     .menu-toggle span {
       display: block;
       width: 22px;
@@ -270,15 +241,10 @@
       transition: transform 0.3s var(--ease), opacity 0.3s ease;
       transform-origin: center;
     }
-
     .menu-toggle[aria-expanded="true"] span:nth-child(1) {
       transform: translateY(7.5px) rotate(45deg);
     }
-
-    .menu-toggle[aria-expanded="true"] span:nth-child(2) {
-      opacity: 0;
-    }
-
+    .menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
     .menu-toggle[aria-expanded="true"] span:nth-child(3) {
       transform: translateY(-7.5px) rotate(-45deg);
     }
@@ -290,22 +256,16 @@
       background: var(--ivory);
       border-top: 1px solid var(--soft-gray);
     }
-
-    .mobile-nav.open {
-      display: flex;
-    }
-
+    .mobile-nav.open { display: flex; }
     .mobile-nav a {
       padding: 1rem 0;
       font-size: 1rem;
       letter-spacing: 0.03em;
       border-bottom: 1px solid var(--soft-gray);
     }
+    .mobile-nav a:last-child { border-bottom: none; }
 
-    .mobile-nav a:last-child {
-      border-bottom: none;
-    }
-
+    /* Hero */
     .hero {
       padding: var(--space-2xl) 1.5rem var(--space-xl);
       text-align: center;
@@ -315,21 +275,54 @@
       overflow: hidden;
     }
 
-    .hero-inner {
-      max-width: 680px;
-      margin: 0 auto;
+    .hero-inner { max-width: 680px; margin: 0 auto; }
+
+    .hero-logo-wrap {
+      position: relative;
+      width: 140px;
+      height: 140px;
+      margin: 0 auto 2.25rem;
+      opacity: 0;
+      transform: scale(0.94);
+      animation: heroIn 0.9s var(--ease) 0.1s forwards;
+      perspective: 600px;
     }
 
     .hero-logo {
-      width: 120px;
-      height: 120px;
-      margin: 0 auto 2rem;
+      width: 100%;
+      height: 100%;
       border-radius: 50%;
       object-fit: cover;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.12);
-      opacity: 0;
-      transform: scale(0.94);
-      animation: heroIn 0.9s var(--ease) 0.1s forwards, logoBreath 5.5s ease-in-out 1.2s infinite;
+      display: block;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.18), 0 0 0 1px rgba(201,168,108,0.15);
+      animation: logoFloat 6s ease-in-out 1.1s infinite;
+      transform-style: preserve-3d;
+    }
+
+    .hero-logo-wrap::after {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      border-radius: 50%;
+      background: linear-gradient(115deg, transparent 20%, rgba(255,230,180,0) 35%, rgba(255,230,180,0.55) 50%, rgba(255,230,180,0) 65%, transparent 80%);
+      background-size: 250% 100%;
+      z-index: 2;
+      pointer-events: none;
+      mix-blend-mode: soft-light;
+      animation: glazeSweep 4.8s ease-in-out 1.8s infinite;
+    }
+
+    .hero-logo-wrap::before {
+      content: "";
+      position: absolute;
+      inset: -10px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(201,168,108,0.35) 0%, rgba(201,168,108,0.08) 45%, transparent 70%);
+      z-index: 0;
+      animation: glowPulse 4s ease-in-out 1.2s infinite;
+      pointer-events: none;
     }
 
     .hero-label {
@@ -371,7 +364,7 @@
       letter-spacing: 0.16em;
       text-transform: uppercase;
       color: var(--charcoal);
-      margin-bottom: 1.75rem;
+      margin-bottom: 1.5rem;
       opacity: 0;
       transform: translateY(10px);
       animation: heroIn 0.8s var(--ease) 0.58s forwards;
@@ -397,34 +390,31 @@
     }
 
     @keyframes heroIn {
-      to {
-        opacity: 1;
-        transform: none;
-      }
+      to { opacity: 1; transform: none; }
     }
-
-    @keyframes logoBreath {
-      0%, 100% {
-        box-shadow: 0 12px 40px rgba(0,0,0,0.12), 0 0 0 0 rgba(201, 168, 108, 0);
-      }
-      50% {
-        box-shadow: 0 12px 40px rgba(0,0,0,0.12), 0 0 28px 4px rgba(201, 168, 108, 0.22);
-      }
+    @keyframes logoFloat {
+      0%, 100% { transform: translateY(0) rotateY(-4deg) rotateX(2deg); }
+      50% { transform: translateY(-6px) rotateY(4deg) rotateX(-1deg); }
     }
-
+    @keyframes glazeSweep {
+      0% { background-position: 180% 0; opacity: 0; }
+      15% { opacity: 1; }
+      50% { background-position: -80% 0; opacity: 1; }
+      65% { opacity: 0; }
+      100% { background-position: -80% 0; opacity: 0; }
+    }
+    @keyframes glowPulse {
+      0%, 100% { opacity: 0.55; transform: scale(0.96); }
+      50% { opacity: 1; transform: scale(1.05); }
+    }
     @keyframes softShift {
       0%, 100% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
     }
 
-    section {
-      padding: var(--space-xl) 1.5rem;
-    }
-
-    .section-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-    }
+    /* Sections */
+    section { padding: var(--space-xl) 1.5rem; }
+    .section-inner { max-width: var(--max-width); margin: 0 auto; }
 
     .section-label {
       font-size: 0.75rem;
@@ -453,14 +443,38 @@
       transform: translateY(22px);
       transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
     }
-
     .reveal.visible {
       opacity: 1;
       transform: none;
     }
 
-    .pillars {
+    /* Philosophy strip */
+    .philosophy {
       background: var(--white);
+      text-align: center;
+      padding: var(--space-xl) 1.5rem;
+    }
+    .philosophy-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .philosophy p {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(1.35rem, 3vw, 1.75rem);
+      line-height: 1.5;
+      color: var(--charcoal);
+      margin-bottom: 1rem;
+    }
+    .philosophy-note {
+      font-size: 0.875rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    /* Pillars */
+    .pillars {
+      background: var(--ivory);
       padding-top: var(--space-xl);
       padding-bottom: var(--space-xl);
     }
@@ -474,23 +488,20 @@
     .pillar {
       padding: 2.25rem 1.75rem;
       text-align: center;
-      background: var(--ivory);
+      background: var(--white);
       border-radius: var(--radius);
       border: 1px solid var(--soft-gray);
       transition: transform 0.3s var(--ease), box-shadow 0.3s ease, border-color 0.3s ease;
     }
-
     .pillar:hover {
       transform: translateY(-3px);
       box-shadow: 0 12px 32px rgba(0,0,0,0.06);
       border-color: var(--taupe);
     }
-
     .pillar h3 {
       font-size: 1.65rem;
       margin-bottom: 0.75rem;
     }
-
     .pillar p {
       font-size: 0.975rem;
       color: var(--text-muted);
@@ -499,13 +510,9 @@
       margin: 0 auto;
     }
 
-    .services-block {
-      background: var(--ivory);
-    }
-
-    .services-block.alt {
-      background: var(--white);
-    }
+    /* Services */
+    .services-block { background: var(--ivory); }
+    .services-block.alt { background: var(--white); }
 
     .service-groups {
       display: grid;
@@ -532,7 +539,6 @@
       color: var(--charcoal);
       line-height: 1.5;
     }
-
     .service-list li::before {
       content: "";
       position: absolute;
@@ -544,11 +550,7 @@
       background: var(--taupe);
     }
 
-    .laser-grid {
-      display: grid;
-      gap: 3rem;
-    }
-
+    .laser-grid { display: grid; gap: 3rem; }
     .laser-col h3 {
       font-family: 'Outfit', sans-serif;
       font-size: 0.8125rem;
@@ -559,9 +561,8 @@
       margin-bottom: 1.25rem;
     }
 
-    .packages {
-      background: var(--blush);
-    }
+    /* Packages */
+    .packages { background: var(--blush); }
 
     .packages-list {
       display: grid;
@@ -571,100 +572,104 @@
 
     .package-item {
       background: var(--white);
-      padding: 1.35rem 1.5rem;
+      padding: 1.5rem 1.5rem;
       border-radius: var(--radius);
       font-size: 1.05rem;
       font-weight: 400;
       border: 1px solid rgba(0,0,0,0.04);
       transition: transform 0.3s var(--ease), box-shadow 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
     }
-
     .package-item:hover {
       transform: translateY(-2px);
       box-shadow: 0 8px 24px rgba(0,0,0,0.06);
     }
+    .package-num {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.5rem;
+      color: var(--gold);
+      font-weight: 500;
+      min-width: 1.75rem;
+    }
 
-    .closing {
-      text-align: center;
-      padding: var(--space-2xl) 1.5rem;
+    /* Book strip */
+    .book-strip {
       background: var(--charcoal);
       color: var(--ivory);
+      text-align: center;
+      padding: var(--space-xl) 1.5rem;
     }
-
-    .closing-logo {
-      width: 80px;
-      height: 80px;
-      margin: 0 auto 2rem;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-
-    .closing h2 {
+    .book-strip h2 {
       color: var(--ivory);
-      font-size: clamp(1.9rem, 4.5vw, 2.75rem);
-      margin-bottom: 0.85rem;
+      font-size: clamp(1.75rem, 4vw, 2.4rem);
+      margin-bottom: 0.75rem;
     }
-
-    .closing-tagline {
+    .book-strip p {
       color: var(--taupe);
-      font-size: 1.125rem;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1.75rem;
+      max-width: 420px;
+      margin-left: auto;
+      margin-right: auto;
     }
-
-    .closing-pillars {
-      font-size: 0.75rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--blush);
-      margin-bottom: 2.5rem;
-    }
-
-    .closing-actions {
+    .book-actions {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 1rem;
-      margin-bottom: 2rem;
     }
-
-    .closing .btn {
+    .book-strip .btn {
       border-color: var(--ivory);
       background: var(--ivory);
       color: var(--charcoal);
     }
-
-    .closing .btn:hover {
+    .book-strip .btn:hover {
       background: transparent;
       color: var(--ivory);
     }
-
-    .closing .btn-instagram {
+    .book-strip .btn-instagram {
       border-color: #E1306C;
       background: transparent;
       color: #E1306C;
     }
-
-    .closing .btn-instagram:hover {
+    .book-strip .btn-instagram:hover {
       background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
       border-color: transparent;
       color: #fff;
     }
 
-    .contact-info {
-      font-size: 0.975rem;
+    /* Closing */
+    .closing {
+      text-align: center;
+      padding: var(--space-2xl) 1.5rem;
+      background: var(--ivory);
+    }
+    .closing-logo {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 1.75rem;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .closing h2 {
+      font-size: clamp(1.9rem, 4.5vw, 2.6rem);
+      margin-bottom: 0.75rem;
+    }
+    .closing-tagline {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+    .closing-pillars {
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
       color: var(--taupe);
+      margin-bottom: 2rem;
     }
 
-    .contact-info a {
-      color: var(--ivory);
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.2s ease;
-    }
-
-    .contact-info a:hover {
-      border-bottom-color: var(--taupe);
-    }
-
+    /* Footer */
     .site-footer {
       padding: 2rem 1.5rem;
       text-align: center;
@@ -673,7 +678,6 @@
       font-size: 0.875rem;
       color: var(--taupe);
     }
-
     .footer-links {
       display: flex;
       justify-content: center;
@@ -681,111 +685,92 @@
       margin-bottom: 1rem;
       flex-wrap: wrap;
     }
-
     .footer-links a {
       color: var(--blush);
       transition: color 0.2s ease;
     }
+    .footer-links a:hover { color: var(--ivory); }
 
-    .footer-links a:hover {
-      color: var(--ivory);
+    /* Sticky mobile CTA */
+    .sticky-cta {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 90;
+      display: flex;
+      background: var(--charcoal);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding: 0.65rem 1rem;
+      gap: 0.75rem;
+      box-shadow: 0 -8px 24px rgba(0,0,0,0.15);
+    }
+    .sticky-cta a {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.85rem 0.5rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border-radius: var(--radius);
+      transition: opacity 0.2s ease;
+    }
+    .sticky-cta a:hover { opacity: 0.9; }
+    .sticky-cta .sticky-call {
+      background: var(--ivory);
+      color: var(--charcoal);
+    }
+    .sticky-cta .sticky-ig {
+      background: transparent;
+      border: 1px solid #E1306C;
+      color: #E1306C;
+    }
+    .sticky-cta svg {
+      width: 15px;
+      height: 15px;
+      fill: currentColor;
     }
 
+    /* Responsive */
     @media (min-width: 480px) {
-      .service-list {
-        grid-template-columns: 1fr 1fr;
-      }
+      .service-list { grid-template-columns: 1fr 1fr; }
     }
 
     @media (min-width: 640px) {
-      .packages-list {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .laser-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 4rem;
-      }
-
-      .hero-logo {
-        width: 140px;
-        height: 140px;
-      }
+      .packages-list { grid-template-columns: 1fr 1fr; }
+      .laser-grid { grid-template-columns: 1fr 1fr; gap: 4rem; }
+      .hero-logo-wrap { width: 150px; height: 150px; }
     }
 
     @media (min-width: 768px) {
-      html {
-        font-size: 17px;
-      }
-
-      .nav {
-        display: flex;
-      }
-
-      .menu-toggle {
-        display: none;
-      }
-
-      .header-inner {
-        padding: 1.15rem 2rem;
-      }
-
-      .logo-img {
-        width: 46px;
-        height: 46px;
-      }
-
-      .logo-text {
-        font-size: 1.45rem;
-      }
-
-      .pillars-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.75rem;
-      }
-
-      .service-groups {
-        grid-template-columns: 1fr 1fr;
-        gap: 3.5rem 3rem;
-      }
-
-      section {
-        padding: var(--space-xl) 2rem;
-      }
-
-      .hero {
-        padding: var(--space-3xl) 2rem var(--space-2xl);
-      }
+      html { font-size: 17px; }
+      body { padding-bottom: 0; }
+      .sticky-cta { display: none; }
+      .nav { display: flex; }
+      .menu-toggle { display: none; }
+      .header-inner { padding: 1.15rem 2rem; }
+      .logo-img { width: 46px; height: 46px; }
+      .logo-text { font-size: 1.45rem; }
+      .pillars-grid { grid-template-columns: repeat(2, 1fr); gap: 1.75rem; }
+      .service-groups { grid-template-columns: 1fr 1fr; gap: 3.5rem 3rem; }
+      section { padding: var(--space-xl) 2rem; }
+      .hero { padding: var(--space-3xl) 2rem var(--space-2xl); }
     }
 
     @media (min-width: 960px) {
-      .pillars-grid {
-        grid-template-columns: repeat(4, 1fr);
-      }
-
-      .packages-list {
-        grid-template-columns: repeat(4, 1fr);
-      }
-
-      .service-list {
-        gap: 0.7rem 2.5rem;
-      }
+      .pillars-grid { grid-template-columns: repeat(4, 1fr); }
+      .packages-list { grid-template-columns: repeat(4, 1fr); }
+      .service-list { gap: 0.7rem 2.5rem; }
     }
 
     @media (min-width: 1100px) {
-      html {
-        font-size: 18px;
-      }
-
-      .header-inner {
-        padding-left: 0;
-        padding-right: 0;
-      }
-
-      section {
-        padding-left: 2rem;
-        padding-right: 2rem;
-      }
+      html { font-size: 18px; }
+      .header-inner { padding-left: 0; padding-right: 0; }
+      section { padding-left: 2rem; padding-right: 2rem; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -794,28 +779,12 @@
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
       }
-
-      .reveal {
-        opacity: 1;
-        transform: none;
+      .reveal { opacity: 1; transform: none; }
+      .hero-logo-wrap, .hero-logo, .hero-label, .hero h1, .hero-sub, .hero-pillars, .hero-tagline, .hero-actions {
+        opacity: 1; transform: none; animation: none;
       }
-
-      .hero-logo,
-      .hero-label,
-      .hero h1,
-      .hero-sub,
-      .hero-pillars,
-      .hero-tagline,
-      .hero-actions {
-        opacity: 1;
-        transform: none;
-        animation: none;
-      }
-
-      .hero {
-        animation: none;
-        background: linear-gradient(180deg, #EDE6E1 0%, var(--ivory) 70%);
-      }
+      .hero-logo-wrap::before, .hero-logo-wrap::after { animation: none !important; opacity: 0.4; }
+      .hero { animation: none; background: linear-gradient(180deg, #EDE6E1 0%, var(--ivory) 70%); }
     }
   </style>
 </head>
@@ -837,9 +806,7 @@
       <div class="header-actions">
         <a href="tel:7042520220" class="btn">Call Now</a>
         <button class="menu-toggle" aria-label="Open menu" id="menuToggle" aria-expanded="false">
-          <span></span>
-          <span></span>
-          <span></span>
+          <span></span><span></span><span></span>
         </button>
       </div>
     </div>
@@ -858,7 +825,9 @@
   <main>
     <section class="hero">
       <div class="hero-inner">
-        <img src="logo-512.png" alt="The Lush Theory" class="hero-logo" width="140" height="140">
+        <div class="hero-logo-wrap">
+          <img src="logo-512.png" alt="The Lush Theory" class="hero-logo" width="140" height="140">
+        </div>
         <p class="hero-label">Unisex Salon</p>
         <h1>The Lush Theory</h1>
         <p class="hero-sub">Complete Beauty & Grooming Solutions</p>
@@ -871,6 +840,13 @@
             Instagram
           </a>
         </div>
+      </div>
+    </section>
+
+    <section class="philosophy">
+      <div class="philosophy-inner reveal">
+        <p>Your beauty is our priority. We bring complete care for skin, laser, aesthetics, hair and nails under one calm, considered space.</p>
+        <span class="philosophy-note">Women · Men · Laser · Aesthetics</span>
       </div>
     </section>
 
@@ -908,7 +884,6 @@
           <h2 class="section-title">Women's Salon Services</h2>
           <p class="section-intro">Hair, skin, beauty and bridal services designed for complete care.</p>
         </div>
-
         <div class="service-groups">
           <div class="service-group reveal">
             <h3>Hair Care & Styling</h3>
@@ -927,7 +902,6 @@
               <li>Hair Extensions</li>
             </ul>
           </div>
-
           <div class="service-group reveal">
             <h3>Skin Care & Facial</h3>
             <ul class="service-list">
@@ -945,7 +919,6 @@
               <li>Acne & Pigmentation Care</li>
             </ul>
           </div>
-
           <div class="service-group reveal">
             <h3>Beauty & Grooming</h3>
             <ul class="service-list">
@@ -961,7 +934,6 @@
               <li>Hair Spa & Scalp Care</li>
             </ul>
           </div>
-
           <div class="service-group reveal">
             <h3>Bridal & Makeup</h3>
             <ul class="service-list">
@@ -986,7 +958,6 @@
           <h2 class="section-title">Men's Salon & Grooming</h2>
           <p class="section-intro">Hair, beard and skin services focused on clean, refined results.</p>
         </div>
-
         <div class="service-groups">
           <div class="service-group reveal">
             <h3>Hair Services</h3>
@@ -1002,7 +973,6 @@
               <li>Hair & Scalp Treatments</li>
             </ul>
           </div>
-
           <div class="service-group reveal">
             <h3>Beard & Grooming</h3>
             <ul class="service-list">
@@ -1014,7 +984,6 @@
               <li>Head Massage</li>
             </ul>
           </div>
-
           <div class="service-group reveal">
             <h3>Men's Skin Care</h3>
             <ul class="service-list">
@@ -1043,7 +1012,6 @@
           <h2 class="section-title">Laser Hair Reduction</h2>
           <p class="section-intro">Targeted laser hair reduction for women and men.</p>
         </div>
-
         <div class="laser-grid">
           <div class="laser-col reveal">
             <h3>Women</h3>
@@ -1085,7 +1053,6 @@
           <h2 class="section-title">Aesthetic & Skin Treatments</h2>
           <p class="section-intro">Clinical and advanced treatments for skin health and appearance.</p>
         </div>
-
         <ul class="service-list reveal" style="max-width: 720px;">
           <li>HydraFacial & Advanced HydraFacial</li>
           <li>Carbon Laser Facial</li>
@@ -1115,36 +1082,39 @@
           <h2 class="section-title">Packages</h2>
           <p class="section-intro">Curated packages for bridal, groom, couples and ongoing care.</p>
         </div>
-
         <div class="packages-list">
-          <div class="package-item reveal">Bridal Beauty Packages</div>
-          <div class="package-item reveal">Groom Packages</div>
-          <div class="package-item reveal">Pre-Bridal & Pre-Groom Packages</div>
-          <div class="package-item reveal">Couple Packages</div>
-          <div class="package-item reveal">Monthly Beauty Membership</div>
-          <div class="package-item reveal">Hair & Skin Care Packages</div>
-          <div class="package-item reveal">Laser Hair Reduction Packages</div>
-          <div class="package-item reveal">Festive & Party Packages</div>
+          <div class="package-item reveal"><span class="package-num">01</span> Bridal Beauty Packages</div>
+          <div class="package-item reveal"><span class="package-num">02</span> Groom Packages</div>
+          <div class="package-item reveal"><span class="package-num">03</span> Pre-Bridal & Pre-Groom Packages</div>
+          <div class="package-item reveal"><span class="package-num">04</span> Couple Packages</div>
+          <div class="package-item reveal"><span class="package-num">05</span> Monthly Beauty Membership</div>
+          <div class="package-item reveal"><span class="package-num">06</span> Hair & Skin Care Packages</div>
+          <div class="package-item reveal"><span class="package-num">07</span> Laser Hair Reduction Packages</div>
+          <div class="package-item reveal"><span class="package-num">08</span> Festive & Party Packages</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="book-strip">
+      <div class="reveal">
+        <h2>Ready to book?</h2>
+        <p>Call us or message on Instagram. We will help you choose the right service.</p>
+        <div class="book-actions">
+          <a href="tel:7042520220" class="btn">Call 7042520220</a>
+          <a href="https://instagram.com/thelushtheory.salon" target="_blank" rel="noopener" class="btn btn-instagram" aria-label="Message on Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            Instagram
+          </a>
         </div>
       </div>
     </section>
 
     <section class="closing">
       <div class="reveal">
-        <img src="logo-512.png" alt="" class="closing-logo" width="80" height="80">
+        <img src="logo-512.png" alt="" class="closing-logo" width="72" height="72">
         <h2>Your Beauty, Our Priority</h2>
         <p class="closing-tagline">Look Beautiful. Feel Confident.</p>
         <p class="closing-pillars">Women · Men · Laser · Aesthetics</p>
-        <div class="closing-actions">
-          <a href="tel:7042520220" class="btn">Call 7042520220</a>
-          <a href="https://instagram.com/thelushtheory.salon" target="_blank" rel="noopener" class="btn btn-instagram" aria-label="Follow on Instagram">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-            Instagram
-          </a>
-        </div>
-        <p class="contact-info">
-          <a href="https://instagram.com/thelushtheory.salon" target="_blank" rel="noopener">@thelushtheory.salon</a>
-        </p>
       </div>
     </section>
   </main>
@@ -1161,6 +1131,15 @@
     <p>The Lush Theory · Unisex Salon</p>
   </footer>
 
+  <!-- Sticky mobile CTA -->
+  <div class="sticky-cta" aria-label="Quick actions">
+    <a href="tel:7042520220" class="sticky-call">Call Now</a>
+    <a href="https://instagram.com/thelushtheory.salon" target="_blank" rel="noopener" class="sticky-ig" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      Instagram
+    </a>
+  </div>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -1172,9 +1151,7 @@
     "telephone": "+917042520220",
     "image": "https://thelustherapy.netlify.app/logo-512.png",
     "priceRange": "$$",
-    "sameAs": [
-      "https://www.instagram.com/thelushtheory.salon"
-    ],
+    "sameAs": ["https://www.instagram.com/thelushtheory.salon"],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "Salon Services",
@@ -1192,12 +1169,10 @@
   <script>
     const toggle = document.getElementById('menuToggle');
     const mobileNav = document.getElementById('mobileNav');
-
     toggle.addEventListener('click', () => {
       const isOpen = mobileNav.classList.toggle('open');
       toggle.setAttribute('aria-expanded', isOpen);
     });
-
     mobileNav.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         mobileNav.classList.remove('open');
@@ -1213,11 +1188,7 @@
           observer.unobserve(entry.target);
         }
       });
-    }, {
-      threshold: 0.12,
-      rootMargin: '0px 0px -40px 0px'
-    });
-
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
     reveals.forEach(el => observer.observe(el));
   </script>
 </body>
